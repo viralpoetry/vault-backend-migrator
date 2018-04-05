@@ -38,9 +38,9 @@ func (v *Vault) List(path string) *[]string {
 	secret, err := v.c.Logical().List(path)
 	if secret == nil || err != nil {
 		if err == nil {
-			fmt.Println("Unable to read path, does it exist?")
+			//fmt.Println("Unable to list path, does it exist? Path=%v\n", path)
 		}
-		fmt.Printf("Error reading secrets, err=%v\n", err)
+		//fmt.Printf("Error reading secrets, err=%v, path=%v\n", err, path)
 		return nil
 	}
 
